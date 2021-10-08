@@ -713,9 +713,6 @@
         background-color: rgba(0, 0, 0, 0.2);
 
         transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        /*transition-property: opacity;*/
-        /*transition-duration: 250ms;*/
-        /*transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
     }
 
     .backdrop.is-hidden {
@@ -724,11 +721,16 @@
         pointer-events: none;
     }
 
+    .backdrop.is-hidden .modal {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
     .modal {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
         min-width: 528px;
         min-height: 581px;
@@ -755,6 +757,12 @@
         justify-content: center;
     }
 
+    /*.close-modal-btn:hover {*/
+    /*    border: 1px solid var(--accent-color)*/
+    /*}*/
+
     .close-modal-icon {
         fill: #000000;
     }
+
+
